@@ -1,0 +1,32 @@
+# Terraform directories
+**/.terraform/*
+
+# State files (contain real infra details & possible secrets)
+*.tfstate
+*.tfstate.*
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+
+# Terraform plan output
+*.plan
+
+# CLI credentials (IMPORTANT for GCP)
+.terraformrc
+terraform.rc
+
+# Crash logs
+crash.log
+
+# VS Code
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Json keys for GCP service account
+terraform-key.json
+*key.json
+*service-account*.json

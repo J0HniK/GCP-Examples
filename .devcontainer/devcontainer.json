@@ -1,0 +1,14 @@
+{
+  "name": "GCP Terraform Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "hashicorp.terraform",
+        "ms-vscode.vscode-gcp-tools"
+      ]
+    }
+  }
+}

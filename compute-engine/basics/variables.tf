@@ -1,25 +1,25 @@
 variable "project_id" {
   description = "GCP project ID"
   type        = string
-  default     = "sound-decoder-473814-f8"
+  default     = "learning-12613"
 }
 
 variable "region" {
   description = "Region for resources"
   type        = string
-  default     = "us-central1"
+  default     = "europe-west1"
 }
 
 variable "zone" {
   description = "Zone for the instance"
   type        = string
-  default     = "us-central1-c"
+  default     = "europe-west1-c"
 }
 
 variable "instance_name" {
   description = "Name of the compute instance"
   type        = string
-  default     = "instance-20251125-154058"
+  default     = "appache-instance-20251125-154058"
 }
 
 variable "instance_description" {
@@ -61,7 +61,7 @@ variable "subnetwork_name" {
 variable "service_account_email" {
   description = "Service account email used by the instance"
   type        = string
-  default     = "479922139681-compute@developer.gserviceaccount.com"
+  default     = "terraform-sevice-account@learning-12613.iam.gserviceaccount.com"
 }
 
 variable "service_account_scopes" {
@@ -86,14 +86,14 @@ variable "instance_tags" {
 variable "startup_script" {
   description = "Startup script to run on instance boot"
   type        = string
-  default     = <<-EOT
+  default     = <<SCRIPT
     #! /bin/bash
     apt update
     apt -y install apache2
     cat <<EOF > /var/www/html/index.html
     <html><body><p>Linux startup script added directly.</p></body></html>
     EOF
-  EOT
+  SCRIPT
 }
 
 # Ops Agent / Cloud Operations module variables
@@ -101,7 +101,7 @@ variable "startup_script" {
 variable "ops_agent_assignment_id" {
   description = "Assignment ID for the Ops Agent policy"
   type        = string
-  default     = "goog-ops-agent-v2-x86-template-1-4-0-us-central1-c"
+  default     = "goog-ops-agent-v2-x86-template-1-4-0-europe-west1-c"
 }
 
 variable "ops_agent_package_state" {
